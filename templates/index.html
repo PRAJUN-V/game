@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Ludo Online - Home{% endblock %}
+
+{% block content %}
+<div class="bg-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-md">
+    <div class="space-y-8">
+        <div class="text-center">
+            <h2 class="text-xl font-semibold mb-2">Create a New Room</h2>
+            <form action="/create" method="post" class="space-y-4">
+                <input type="text" name="player_name" placeholder="Your Name" required 
+                    class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500">
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded font-bold transition">
+                    Create Room
+                </button>
+            </form>
+        </div>
+
+        <div class="relative">
+            <div class="absolute inset-0 flex items-center"><span class="w-full border-t border-gray-600"></span></div>
+            <div class="relative flex justify-center text-xs uppercase"><span class="bg-gray-800 px-2 text-gray-400">Or Join Existing</span></div>
+        </div>
+
+        <div class="text-center">
+            <form action="/join" method="post" class="space-y-4">
+                <input type="text" name="room_id" placeholder="Room Number" required
+                    class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500">
+                <input type="text" name="player_name" placeholder="Your Name" required
+                    class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500">
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 py-2 rounded font-bold transition">
+                    Join Room
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
